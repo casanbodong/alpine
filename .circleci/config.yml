@@ -1,0 +1,13 @@
+working_dir: &working_dir ~/main
+
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202201-02
+    parallelism: 5
+    steps:
+      - checkout
+      - run: chmod +x ./install.sh
+      - run: ./install.sh
